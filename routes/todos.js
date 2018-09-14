@@ -1,15 +1,9 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models');
+var helper = require('../helpers/todos');
 
-router.get('/', function(req, res) {
-    db.Todo.find()
-    .then(function(todos) {
-        res.json(todos);
-    })
-    .catch(function(err) {
-        res.send(err);
-    })
-});
+router.route('/')
+.get(helper.getTodos)
+.post(helper.createTodo);
 
 module.exports = router;
