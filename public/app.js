@@ -8,8 +8,13 @@ $(document).ready(function() {
         }
     })
 
-    $('ul').on('click', 'span', function() {
+    $('ul').on('click', 'span', function(e) {
+        e.stopPropagation();
         removeTodo($(this).parent());
+    })
+
+    $('.list').on('click', 'li', function() {
+        updateTodo($(this));
     })
 
 })
@@ -58,6 +63,19 @@ function removeTodo(todo) {
     .catch(function(err) {
         console.log(err);
     }) 
-    
+}
 
+function updateTodo(todo) {
+    var updateUrl = '/api/todos/' + todo.data('id');
+    var isDone = !todo.data('completed');
+    var updatedData = {completed: isDone};
+    $.ajax({
+        method: 'PUT', 
+        url: updateUrl, 
+        data: updatedData
+    })
+    .then(function(updatedTodo) {
+        todo.toggleClass('done');
+        todo.data('completed', isDone);
+    })
 }
