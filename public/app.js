@@ -8,6 +8,10 @@ $(document).ready(function() {
         }
     })
 
+    $('ul').on('click', 'span', function() {
+        removeTodo($(this).parent());
+    })
+
 })
 
 function addTodos(todos) {
@@ -39,4 +43,21 @@ function createTodo() {
     .catch(function(err) {
         console.log(err);
     })
+}
+
+function removeTodo(todo) {
+    var clickedId = todo.data('id');
+    var deleteUrl = '/api/todos/' + clickedId;
+    $.ajax({
+        method: "DELETE", 
+        url: deleteUrl
+    })
+    .then(function() {
+        todo.remove();
+    })
+    .catch(function(err) {
+        console.log(err);
+    }) 
+    
+
 }
