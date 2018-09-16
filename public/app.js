@@ -17,6 +17,8 @@ $(document).ready(function() {
         updateTodo($(this));
     })
 
+    console.log("Hey snoop, I like that you are reading this. Check out github for more code on this.")
+
 })
 
 function addTodos(todos) {
