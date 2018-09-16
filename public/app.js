@@ -26,7 +26,7 @@ function addTodos(todos) {
 }
 
 function addTodo(todo) {
-    if(todo.content == "ValidationError") {
+    if(todo.content == "ValidationError" || typeof(todo.content) === "undefined") {
         return;
     }
     var newTodo = $('<li class="task">' + todo.content + ' <span>X</span></li>');
