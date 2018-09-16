@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #ecf0f1;
+    background: #fff;
 }
 
 /*HEADER STYLES*/
@@ -33,6 +33,7 @@ header h1 span {
 header h2 {
     color: #bdc3c7;
     font-weight: 300;
+    font-family: 'Merriweather', serif;
 }
 
 /*FORM STYLES*/
@@ -59,6 +60,7 @@ header h2 {
 .list {
     width: 75%;
     margin: 0 auto;
+    font-family: 'Merriweather', serif;
 }
 .task {
     width: 100%;

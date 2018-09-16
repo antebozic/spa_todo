@@ -31,14 +31,15 @@ exports.getTodo = function(req, res) {
 }
 
 exports.updateTodo = function(req, res) {
+    console.log("hello from update helper");
     db.Todo.findOneAndUpdate({_id: req.params.todoId}, req.body, {new: true})
-    .then(function(todo) {
+    .then(function(todo){
         res.json(todo);
     })
-    .catch(function(err) {
-        res.send(err)
+    .catch(function(err){
+        res.send(err);
     })
-}
+};
 
 exports.deleteTodo = function(req, res) {
     db.Todo.remove({_id: req.params.todoId})

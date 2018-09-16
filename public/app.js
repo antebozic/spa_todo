@@ -33,7 +33,7 @@ function addTodo(todo) {
     newTodo.data('id', todo._id);
     newTodo.data('completed', todo.completed);
     if(todo.completed) {
-        newTodo.addClass('.done');
+        newTodo.addClass("done");
     }
     $('.list').append(newTodo);
 }
@@ -66,16 +66,17 @@ function removeTodo(todo) {
 }
 
 function updateTodo(todo) {
+    console.log("hello from update JS");
     var updateUrl = '/api/todos/' + todo.data('id');
     var isDone = !todo.data('completed');
-    var updatedData = {completed: isDone};
+    var updateData = {completed: isDone};
     $.ajax({
         method: 'PUT', 
         url: updateUrl, 
-        data: updatedData
+        data: updateData
     })
     .then(function(updatedTodo) {
-        todo.toggleClass('done');
+        todo.toggleClass("done");
         todo.data('completed', isDone);
     })
 }
