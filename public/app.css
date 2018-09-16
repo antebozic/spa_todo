@@ -14,7 +14,7 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #fff;
+    background: hsl(72, 20%, 90%);
 }
 
 /*HEADER STYLES*/
@@ -26,14 +26,15 @@ header h1 {
     font-size: 6.4rem;
     font-weight: 300;
     margin: 8rem 0 2.5rem;
-    color: #2c3e50;
+    color: #119DA4;
     animation: 4s ease-out moveInRight;
 }
 header h1 span {
     font-weight: 700;
+    color: #07396A;
 }
 header h2 {
-    color: #bdc3c7;
+    color: rgba(222,107,72, 0.9);;
     font-weight: 300;
     font-family: 'Merriweather', serif;
     animation: 4s ease-out moveInLeft;
@@ -44,7 +45,6 @@ header h2 {
         opacity: 0;
         transform: translateX(-100px);
     }
-
     80% {
         transform: translateX(10px);
     }
@@ -60,7 +60,6 @@ header h2 {
         opacity: 0;
         transform: translateX(100px);
     }
-
     80% {
         transform: translateX(-10px);
     }
@@ -69,6 +68,7 @@ header h2 {
         transform: translateX(0);
     }
 }
+
 /*FORM STYLES*/
 .form {
     width: 75%;
@@ -83,11 +83,11 @@ header h2 {
     height: 6rem;
     background: none;
     border: none;
-    border-bottom: 1px solid #344953;
+    border-bottom: 0.2rem solid #119DA4;
     outline: none;
     font: 300 2.8rem 'Ubuntu', sans-serif;
     padding: 2rem;
-    color: #34495e;
+    color: #000;
 }
 
 /*LIST STYLES*/
@@ -98,7 +98,7 @@ header h2 {
     font-family: 'Merriweather', serif;
     margin-top: 10rem;
     opacity: 0;
-    animation: 2s slideUp 1s forwards;
+    animation: 2s slideUp 1.5s forwards;
 }
 
 @keyframes slideUp {
@@ -109,7 +109,7 @@ header h2 {
 }
 
 li {
-    animation: 2s ease-out moveInLeft;
+    animation: 1.5s ease-out moveInLeft;
 }
 
 .task {
@@ -118,7 +118,7 @@ li {
     line-height: 6rem;
     font-size: 2rem;
     padding: 0 2rem;
-    color: #34495e;
+    color: #07396A;
     transition: all .4s ease;
 }
 .task:hover {
@@ -133,7 +133,7 @@ li {
 
 .done {
     text-decoration: line-through;
-    color: #bdc3c7;
+    color: rgba(222,107,72, 0.5);
 }
 
 li span {
@@ -145,6 +145,7 @@ li span {
 
 li span:hover {
     color: #e74c3c;
+    font-size: 3rem;
 }
 
 
