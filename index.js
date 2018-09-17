@@ -18,9 +18,10 @@ app.get('/',function(req, res) {
 
 app.use('/api/todos', todoRoutes);
 
-app.listen(port, function() {
-    console.log("app is running on port " + port);
-})
+app.set('port', process.env.PORT || 3000)
 
+  app.listen(app.get('port'), () => {
+    console.log(`✅ PORT: ${app.get('port')} 🌟`)
+  })
 
 
