@@ -32,7 +32,7 @@ header {
 header h1 {
     font-size: 6.4rem;
     font-weight: 300;
-    margin: 8rem 0 2.5rem;
+    margin: 8rem 0 1rem;
     color: #119DA4;
     animation: 3s ease-out moveInRight;
 }
@@ -85,10 +85,11 @@ header h2 {
     margin: 5rem auto 2rem;
     opacity: 0;
     animation: 2s slideUp 1s forwards;
+    text-align: center;
 }
 
 #todoInput {
-    width: 100%;
+    width: 80%;
     height: 6rem;
     background: none;
     border: none;
@@ -97,7 +98,7 @@ header h2 {
     font: 400 2.8rem 'Ubuntu', sans-serif;
     padding: 2rem;
     color: #07396A;
-    transition: all 0.4s 0.1s ease;
+    transition: all 1.5s 0.2s ease;
 }
 
 #todoInput::placeholder {
@@ -105,9 +106,11 @@ header h2 {
     opacity: 0.4;
 }
 
-#todoInput:active, 
-#todoInput:hover {
+#todoInput:hover, 
+#todoInput:focus {
+    width: 100%;
     transform: translateY(1px);
+    border-radius: 50rem;
     box-shadow: 0 5px 10px rgba(0, 0, 0, .1);
 }
 
@@ -163,11 +166,12 @@ li span {
     color: #c0392b;
     transition: all 0.6s 0.1s ease;
     opacity: 0;
+    font-size: 2.5rem;
 }
 
 li span:hover {
     color: #e74c3c;
-    font-size: 4rem;
+    font-size: 4rem
 }
 
 /*FOOTER STYLES*/
