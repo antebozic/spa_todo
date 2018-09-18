@@ -1,15 +1,11 @@
 var mongoose = require('mongoose');
 mongoose.set('debug', true);
-const CONNECTION_URI = process.env.MONGODB_URI || 'mongodb://localhost/spa-todo-api';
 
-mongoose
-    .connect(CONNECTION_URI, {
-        useMongoClient: true
-    })
-    .then(() => {
-        console.log('Connected to MongoDB');
-    })
-    .catch(err => console.log(err));
+if (process.env.NODE_ENV == "production") {
+    mongoose.connect(process.env.MLAB_URL)
+  } else {
+    mongoose.connect("mongodb://localhost/spa-todo-api");
+  }
 
 mongoose.Promise = Promise;
 

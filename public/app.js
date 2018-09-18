@@ -17,7 +17,7 @@ $(document).ready(function() {
         updateTodo($(this));
     })
 
-    console.log("Hey snoop, I like that you are reading this. Check out github for more code on this.")
+    console.log("more code @ https://github.com/antebozic/spa_todo")
 
 })
 
